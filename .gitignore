@@ -1,0 +1,6 @@
+#webstorm temp files
+.idea
+#PIXI local library
+libs/pixi_v4.8.2.js
+#template files
+examples/template/*

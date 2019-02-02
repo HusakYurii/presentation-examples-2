@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css?family=Acme|Gamja+Flower');
+
+/*font-family: 'Gamja Flower', cursive;
+font-family: 'Acme', sans-serif;*/
+* {
+    box-sizing: border-box;
+    font-size: 10px;
+}
+html {
+    background-color: azure;
+    margin: 0;
+    padding: 0;
+}
+nav {
+	min-width: 60rem;
+	max-width: 60%;
+	margin: 10rem auto;
+	background-color: #f7f8f8 ;
+	border-radius: 15px 15px 15px 15px;
+	-moz-border-radius: 15px 15px 15px 15px;
+	-webkit-border-radius: 15px 15px 15px 15px;
+	border: 0px solid #000000;
+
+	-webkit-box-shadow: 10px 10px 29px 1px rgba(0,0,0,0.75);
+	-moz-box-shadow: 10px 10px 29px 1px rgba(0,0,0,0.75);
+	box-shadow: 10px 10px 29px 1px rgba(0,0,0,0.75);
+	overflow: hidden;
+}
+
+ol.first, ol.second {
+    list-style-type: square;
+}
+
+ol.first > li, ol.second > li {
+    border-bottom: 4px solid transparent;
+    transition: border-bottom 0.3s ;
+}
+
+ol.first > li:hover, ol.second > li:hover {
+    border-bottom: 4px solid #162742;
+}
+
+ol > p {
+    font-family: 'Acme', sans-serif;
+    font-size: 3rem;
+}
+
+ol > li{
+    font-size: 2.5rem;
+}
+
+li > a {
+    font-family: 'Acme', sans-serif;
+    text-decoration: none;
+    font-size: 2.5rem;
+    color: #000;
+}
+li > a:visited {
+    text-decoration: none;
+    color: #000;
+}
+li > a:active {
+    text-decoration: none;
+    color: #000;
+}
+li > a:hover {
+    text-decoration: none;
+    color: #000;
+}
