@@ -68,18 +68,18 @@ Vector2D.prototype = Object.create({},{
         }
     },
     multiply : {
-        value: function (vec2) {
-            if(!this._isVector(vec2)) { this._inputError("Vector object"); return; }
-            this.x *= vec2.x;
-            this.y *= vec2.y;
+        value: function (scl) {
+            if(!this._isNumber(scl)) { this._inputError("Number"); return; }
+            this.x *= scl.x;
+            this.y *= scl.y;
             return this;
         }
     },
     divide: {
-        value: function (vec2) {
-            if(!this._isVector(vec2)) { this._inputError("Vector object"); return; }
-            this.x /= vec2.x;
-            this.y /= vec2.y;
+        value: function (scl) {
+            if(!this._isNumber(scl)) { this._inputError("Number"); return; }
+            this.x /= scl.x;
+            this.y /= scl.y;
             return this;
         }
     },
