@@ -70,16 +70,16 @@ Vector2D.prototype = Object.create({},{
     multiply : {
         value: function (scl) {
             if(!this._isNumber(scl)) { this._inputError("Number"); return; }
-            this.x *= scl.x;
-            this.y *= scl.y;
+            this.x *= scl;
+            this.y *= scl;
             return this;
         }
     },
     divide: {
         value: function (scl) {
             if(!this._isNumber(scl)) { this._inputError("Number"); return; }
-            this.x /= scl.x;
-            this.y /= scl.y;
+            this.x /= scl;
+            this.y /= scl;
             return this;
         }
     },
