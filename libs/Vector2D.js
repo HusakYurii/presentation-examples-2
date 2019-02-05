@@ -67,6 +67,19 @@ Vector2D.prototype = Object.create({},{
             return this;
         }
     },
+
+    addTo: {
+        value: function (vec2) {
+            if(!this._isVector(vec2)) { this._inputError("Vector object"); return; }
+            return new Vector2D(vec2.x + this.x, vec2.y + this.y);
+        }
+    },
+    subtractFrom: {
+        value: function (vec2) {
+            if(!this._isVector(vec2)) { this._inputError("Vector object"); return; }
+            return new Vector2D(vec2.x - this.x, vec2.y - this.y);
+        }
+    },
     multiply : {
         value: function (scl) {
             if(!this._isNumber(scl)) { this._inputError("Number"); return; }
