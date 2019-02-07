@@ -3,7 +3,8 @@
 * Body object represents a main class which holds all
  * all constructors for creating physical things of the game world.
  * Each particular physical body/thing can have it own unique properties and methods
-* */
+*   bodyShape: 1 is rectangle, 2 - is circle;
+ * */
 
 var Body = {};
 
@@ -11,9 +12,10 @@ Body.Solid = function (name) {
     Sprite.call(this, name);
 
     this.velocity = Vector2D.create(0,0);
+    this.bodyShape = 1;
     this.forces = [];
-};
 
+};
 
 Body.Solid.prototype = Object.create(Sprite.prototype);
 Body.Solid.prototype.constructor = Body.Solid;
@@ -46,10 +48,8 @@ Body.Solid.prototype.add = function (vec2) {
 };
 
 Body.Solid.prototype.update = function(){
-    this.add(this.velocity);
-
     for(var i = this.forces.length - 1; i >= 0; --i){
         this.velocity.add(this.forces[i]);
     }
+    this.add(this.velocity);
 };
-
