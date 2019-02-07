@@ -96,6 +96,11 @@ Vector2D.prototype = Object.create({},{
             return this;
         }
     },
+    clone: {
+        value: function () {
+            return new Vector2D(this.x, this.y);
+        }
+    },
     _isVector: {
         value: function (vector) {
             return vector instanceof Vector2D;
