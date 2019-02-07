@@ -15,6 +15,11 @@
 	<script src="../../../libs/Vector2D.js"></script>
 	<script src="../../../libs/Body.js"></script>
 
+	<script src="config.js"></script>
+
+	<script src="ui/Cross.js"></script>
+	<script src="ui/Brick.js"></script>
+	<script src="ui/Ball.js"></script>
 	<script src="ui/Stage.js"></script>
 
 	<script src="assets.js"></script>
@@ -23,6 +28,15 @@
 <body>
 	<canvas>
 		<p>"Oops! It seems that you use an old browser! Please try more recent version of browsers "</p>
-	</canvas>			
+	</canvas>
+    <div class="inputs">
+        <label for="velocity-direction">Velocity direction</label>
+        <input type="number" name="velocity-direction" id="velocity-direction" data-id="1">
+        <label for="velocity-magnitude">Velocity magnitude</label>
+        <input type="number" name="velocity-magnitude" id="velocity-magnitude" data-id="2">
+        <label for="acceleration-magnitude">Acceleration magnitude</label>
+        <input type="number" name="acceleration-magnitude" id="acceleration-magnitude" data-id="4">
+		<input type="button" id="reset-button" value="RESET">
+    </div>
 </body>
 </html>
