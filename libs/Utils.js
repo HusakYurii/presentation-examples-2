@@ -6,7 +6,7 @@ Utils.drawLine = function (start, end, width, color, alpha) {
     color = color || 0xFFFFFF;
     alpha = alpha || 1;
     return new PIXI.Graphics().lineStyle(width, color, 1).moveTo(start.x, start.y).lineTo(end.x, end.y).endFill();
-}
+};
 
 Utils.drawTransparentRect = function (x, y, w, h, lineWidth, lineColor, alpha, alignment) {
     lineWidth = lineWidth || 2;
@@ -14,7 +14,7 @@ Utils.drawTransparentRect = function (x, y, w, h, lineWidth, lineColor, alpha, a
     alpha = alpha || 1;
     alignment = alignment || 0.5;
     return new PIXI.Graphics().lineStyle(lineWidth, lineColor, alpha, alignment).drawRect(x, y, w, h).endFill();
-}
+};
 
 Utils.drawRect = function (x, y,  w, h, color, alpha) {
     color = color || 0xFFFFFF;
