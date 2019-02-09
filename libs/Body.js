@@ -40,6 +40,17 @@ Body.Solid.prototype.deletForce = function(name){
     this.forces.splice(idx, 1);
 };
 
+Body.Solid.prototype.update = function(delta){
+    for(var i = this.forces.length - 1; i >= 0; --i){
+        this.velocity.add(this.forces[i]);
+    }
+    this.add(this.velocity, delta);
+};
+
+/*I will keep it simple for now.
+* But I should probably patch my Vector2D in to PIXI.Point prototype as it was discussed here
+ * https://github.com/pixijs/pixi.js/issues/403
+ * */
 Body.Solid.prototype.add = function (vec2, delta) {
     if(!vec2) return;
 
@@ -47,10 +58,12 @@ Body.Solid.prototype.add = function (vec2, delta) {
     this.position.y += (vec2.y * delta/16);
 };
 
-Body.Solid.prototype.update = function(delta){
-    for(var i = this.forces.length - 1; i >= 0; --i){
-        this.velocity.add(this.forces[i]);
-    }
-    this.add(this.velocity, delta);
-    this.velocity.limit(10);
+Body.Solid.prototype.addTo =  function (vec2) {
+    return new Vector2D(vec2.x + this.x, vec2.y + this.y);
 };
+
+Body.Solid.prototype.subtractFrom = function (vec2) {
+    return new Vector2D(vec2.x - this.x, vec2.y - this.y);
+};
+
+
