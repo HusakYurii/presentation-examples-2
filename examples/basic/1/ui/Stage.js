@@ -59,6 +59,8 @@ Stage.prototype.isOutOfWorld = function (obj) {
 
 Stage.prototype.ticker = function(delta) {
 	if(this.ball) this.ball.update(delta);
+    this.ball.velocity.limit(10);
+
 	this.isOutOfWorld(this.ball);
 
 	var loc = this.ball.toGlobal({x:0, y:0});
