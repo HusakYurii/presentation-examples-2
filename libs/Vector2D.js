@@ -100,6 +100,13 @@ Vector2D.prototype = Object.create({},{
             return new Vector2D(this.x, this.y);
         }
     },
+    normalize: {
+        value: function () {
+            var mag = this.magnitude;
+            if (mag !== 0) this.multiply(1 / mag);
+            return this;
+        }
+    },
     limit: {
         value: function (max) {
             var mag = this.magnitude;
