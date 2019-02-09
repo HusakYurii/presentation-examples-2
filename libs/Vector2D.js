@@ -8,7 +8,6 @@
 function Vector2D(x, y) {
     this._x = x || 0;
     this._y = y || 0;
-
 }
 Vector2D.prototype = Object.create({},{
     x: {
@@ -101,6 +100,18 @@ Vector2D.prototype = Object.create({},{
             return new Vector2D(this.x, this.y);
         }
     },
+    limit: {
+        value: function (max) {
+            var mag = this.magnitude;
+            if( mag > max ) this.divide(mag).multiply(max);
+            return this;
+        }
+    },
+    _magSqr: {
+        value: function () {
+            return (this.x * this.x + this.y * this.y)
+        }
+    },
     _isVector: {
         value: function (vector) {
             return vector instanceof Vector2D;
@@ -121,5 +132,4 @@ Vector2D.prototype = Object.create({},{
 Vector2D.create = function (x, y) {
     return new Vector2D(x, y);
 };
-
 
