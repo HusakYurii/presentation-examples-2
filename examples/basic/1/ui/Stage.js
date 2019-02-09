@@ -31,6 +31,7 @@ Stage.prototype.addAllComponents = function () {
 	}
 
 };
+/*This one for manipulating using DOM */
 Stage.prototype.addForceOnBall = function (n, val){
 	n = Number(n);
 	val = Number(val);
@@ -57,7 +58,7 @@ Stage.prototype.isOutOfWorld = function (obj) {
 };
 
 Stage.prototype.ticker = function(delta) {
-	if(this.ball) this.ball.update();
+	if(this.ball) this.ball.update(delta);
 	this.isOutOfWorld(this.ball);
 
 	var loc = this.ball.toGlobal({x:0, y:0});
