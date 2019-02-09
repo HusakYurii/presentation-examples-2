@@ -40,16 +40,17 @@ Body.Solid.prototype.deletForce = function(name){
     this.forces.splice(idx, 1);
 };
 
-Body.Solid.prototype.add = function (vec2) {
+Body.Solid.prototype.add = function (vec2, delta) {
     if(!vec2) return;
 
-    this.position.x += vec2.x;
-    this.position.y += vec2.y;
+    this.position.x += (vec2.x * delta/16);
+    this.position.y += (vec2.y * delta/16);
 };
 
-Body.Solid.prototype.update = function(){
+Body.Solid.prototype.update = function(delta){
     for(var i = this.forces.length - 1; i >= 0; --i){
         this.velocity.add(this.forces[i]);
     }
-    this.add(this.velocity);
+    this.add(this.velocity, delta);
+    this.velocity.limit(10);
 };
