@@ -46,9 +46,10 @@ Stage.prototype.onPointerMove = function (event) {
     var loc = event.data.getLocalPosition(this);
 
     var mouse = new Vector2D(loc.x, loc.y);
+    var res = this.ball.subtractFrom(mouse);
+    if( res.magnitude >= 150) return;
 
-    var res = this.ball.subtractFrom(mouse).normalize();
-	this.ball.steer.magnitude = res.magnitude * 0.2;
+	this.ball.steer.magnitude = res.normalize().magnitude * 0.2;
 	this.ball.steer.angle = res.angle;
 };
 
@@ -63,7 +64,7 @@ Stage.prototype.ticker = function(delta) {
 	this.ball.update(delta);
 	this.ball.velocity.limit(3);
 
-	if(!this.isClisked && !this.isPause) {
+	if(!this.isPause) {
 		if(this.ball.velocity.magnitude < 0.001) this.isPause = true;
 
         this.ball.velocity.magnitude *= 0.95;
