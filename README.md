@@ -11,10 +11,14 @@ This time I will talk about:
 
 ### Table of content
 #### Basic operations with vectors:
-- [ ] Basic **Vector2D class**
-- [ ] Creating objects with **velocity**. Movement of these objects (with illustrative examples)
-- [ ] TBD...
+- [ ] What is a Vector (explanation) - _has not been added to presentation yet_
+- [ ] Basic operations with vectors (explanation) - _has not been added to presentation yet_
+- [x] Basic **Vector2D class** (we can look at the library)
+- [ ] Basic Newton's laws (1st, 2nd, 3rd), gravitational attraction law - _has not been added to presentation yet_
+- [x] Creating objects with **velocity** and/or **acceleration**. Movement of these objects (with illustrative examples)
+- [x] Simulating of a **Steering** force (with illustrative examples)
+- [x] Simulation of **Gravitational attraction** (with illustrative examples)
 #### Advanced operations with vectors:
-- [ ] Creating objects with **velocity and acceleration**. Movement of these objects (with illustrative examples)
-- [ ] A stone is thrown at an angle θ to the horizon (velocity and acceleration are taken into account). 
+- [ ] A stone is thrown at an angle θ to the horizon (velocity and acceleration are taken into account).
+- [ ] TBD...
 - [ ] TBD...
