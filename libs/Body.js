@@ -41,6 +41,7 @@ Body.Solid.prototype.deletForce = function(name){
 };
 
 Body.Solid.prototype.update = function(delta){
+
     for(var i = this.forces.length - 1; i >= 0; --i){
         this.velocity.add(this.forces[i]);
     }
@@ -53,6 +54,7 @@ Body.Solid.prototype.update = function(delta){
  * */
 Body.Solid.prototype.add = function (vec2, delta) {
     if(!vec2) return;
+    if(!delta) delta = 16;
 
     this.position.x += (vec2.x * delta/16);
     this.position.y += (vec2.y * delta/16);
